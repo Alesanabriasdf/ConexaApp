@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.conexaapp.ui.news.NewsFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_newDetailFragment"
+            app:destination="@id/newDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.conexaapp.ui.contacts.ContactsFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_contacts" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_contactLocalizationFragment"
+            app:destination="@id/contactLocalizationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newDetailFragment"
+        android:name="com.example.conexaapp.ui.news.newdetail.NewDetailFragment"
+        android:label="fragment_new_detail"
+        tools:layout="@layout/fragment_new_detail">
+        <argument
+            android:name="id_new"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/contactLocalizationFragment"
+        android:name="com.example.conexaapp.ui.contacts.contactlocalization.ContactLocalizationFragment"
+        android:label="fragment_contact_localization"
+        tools:layout="@layout/fragment_contact_localization" >
+        <argument
+            android:name="lat"
+            app:argType="float" />
+        <argument
+            android:name="longitud"
+            app:argType="float" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
